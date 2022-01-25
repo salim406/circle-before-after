@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.box{
+	border-radius: 50%;
+	width: 500px;
+	height: 500px;
+	background-image: url(2.png);
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	margin-top: 100px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+}
+
+.box h1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: blue;
+	color: hotpink;
+	padding: 0px 50%;
+	visibility: hidden;
+
+}
+
+.box:hover h1{
+	visibility: visible;
+}
+
+.box::before{
+	content: "";
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background: red;
+	transition: 0.5s;
+}
+
+.box::after{
+	content: "";
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+	width: 0px;
+	height: 0px;
+	background: green;
+	transition: 0.5s;
+}
+
+.box span::before{
+	content: "";
+	position: absolute;
+	bottom: 0%;
+	width: 0px;
+	height: 0px;
+	background: black;
+	transition: 0.5s;
+}
+
+.box span::after{
+	content: "";
+	position: absolute;
+	right:  0%;
+	width: 0px;
+	height: 0px;
+	background: yellow;
+	transition: 0.5s;
+}
+
+.box:hover::before, .box:hover::after{
+	width: 50%;
+	height: 50%;
+	z-index: -1;
+}
+
+.box:hover span::before, .box:hover span::after{
+	width: 50%;
+	height: 50%;
+	z-index: -1;
+}
